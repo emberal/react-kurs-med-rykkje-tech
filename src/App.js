@@ -1,29 +1,27 @@
 import * as React from "react";
-import Container from "@mui/material/Container";
-import Header from "./components/Header";
-import { Box, Stack } from "@mui/material";
-import Description from "./components/Description";
-import ImageComponent from "./components/ImageComponent";
-import DailyQuote from "./components/DailyQuote";
-import ToDoList from "./components/ToDoList";
-import WeatherWidget from "./components/WeatherWidget";
+import { Box, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 
 export default function App() {
+
+    const [data, setData] = useState("Henter data fra mitt.uib.no...")
+
+    useEffect(() => {
+        setTimeout(() => setData("Nei"), 3000);
+    }, [])
+
     return (
-        <Box sx={{
-            background: "#363636",
-            color: "white",
-        }}>
-            <Container maxWidth="lg">
-            <Header />
-            <Stack direction="column" spacing={ 2 } mt={ 2 }>
-                <Description />
-                <ImageComponent />
-                <DailyQuote />
-                <ToDoList/>
-                <WeatherWidget />
-            </Stack>
-        </Container>
+        <Box sx={ {
+            width: "fit-content",
+            margin: "auto",
+            display: "flex",
+            minHeight: "100vh",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignContent: "center",
+        } } textAlign={"center"}>
+            <Typography>Har innlevering for oblig 1 i INF122 blitt lagt ut?</Typography>
+            <Typography variant={ "h1" }>{data}</Typography>
         </Box>
     );
 }
