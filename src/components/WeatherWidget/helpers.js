@@ -17,4 +17,12 @@ export const locations = {
     lat: 60.3913,
     lon: 5.3221,
   },
+  Trondheim: {
+    lat: 63.4305,
+    lon: 10.3951,
+  },
+  Oslo: {
+    lat: 59.9139,
+    lon: 10.7522,
+  },
 };
