@@ -6,13 +6,15 @@ export const fetchNowcast = async ({ lat, lon }) => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    const data = await response.json();
-    return data;
+    return await response.json();
   } catch (error) {
     console.error("Could not fetch nowcast data:", error);
   }
 };
 
 export const locations = {
-  Bergen: {},
+  Bergen: {
+    lat: 60.3913,
+    lon: 5.3221,
+  },
 };

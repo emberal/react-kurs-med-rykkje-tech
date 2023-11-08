@@ -18,7 +18,7 @@ const WeatherWidget = () => {
       setWeather(weatherData);
     };
 
-    getWeatherData();
+    void getWeatherData();
   }, [currentLocation]);
 
   const handleChangeLocation = (event) => {
