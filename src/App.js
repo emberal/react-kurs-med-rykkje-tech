@@ -7,7 +7,7 @@ export default function App() {
     const [data, setData] = useState("Henter data fra mitt.uib.no...")
 
     useEffect(() => {
-        setTimeout(() => setData("Nei"), 3000);
+        setTimeout(() => setData("Ja, faktisk"), 3000);
     }, [])
 
     return (
